@@ -43,10 +43,16 @@ button.addEventListener('click', function (){
         document.querySelector('.high-score').textContent = highScore;
     }
    }else if(guessNumber !== secrateNumber){
-        guessNumber > secrateNumber ? displayMessage('⏫ Too High.') : displayMessage('⏬ Too Loo.');
-        score--
-        document.querySelector('.score').textContent = score;
-   }
+        if(score > 1){
+            displayMessage(guessNumber > secrateNumber ? '⏫ Too High.' : '⏬ Too Loo.');
+            score--
+            document.querySelector('.score').textContent = score;
+        }else{
+            displayMessage('🚫 You Loss The Game.');
+            document.querySelector('.score').textContent = 0;
+            
+        }
+    }
 });
 
 
