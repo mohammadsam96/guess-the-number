@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Mulish', sans-serif;
+}
+
+header{
+    margin: 30px 0;
+}
+
+.header-top{
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top .btn {
+    background-color: tomato;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header-top p {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.heding {    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.heding h1 {
+    font-size: 1.6rem;
+}
+
+.number {
+    background-color: tomato;
+    color: #fff;
+    padding: 20px 40px;
+    font-weight: 500;
+    font-size: 3rem;
+    margin-top: 30px;
+}
+
+.heding::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: tomato;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+main {
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.left-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 52rem;
+}
+
+.left-content input{
+    background: none;
+    border: 2px solid #eee;
+    font-family: inherit;
+    color: inherit;
+    font-size: 2.5rem;
+    padding: 2.5rem;
+    width: 20rem;
+    text-align: center;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.right-content{
+    width: 52rem;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.right-content p {
+    margin-bottom: 20px;
+}
+
+.left-content .check-btn {
+    width: 100%;
+    padding: 20px 30px;
+    font-size: 2.5rem;
+    color: #fff;
+    background-color: tomato;
+    cursor: pointer;
+    border: none;
+}
+
+.message{
+    padding-bottom: 3rem;
+}
