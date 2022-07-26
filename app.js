@@ -1,7 +1,9 @@
 const button = document.querySelector('.check-btn');
 const again = document.querySelector('.again');
 
-const message = document.querySelector('.message');
+const displayMessage = function(messages){
+    document.querySelector('.message').textContent = messages;
+}
 
 let score = 20;
 document.querySelector('.score').textContent = score;
@@ -25,7 +27,7 @@ button.addEventListener('click', function (){
 
    if(!guessNumber){
     
-    message.textContent = '🛑 Not A Number.';
+    displayMessage('🛑 Not A Number.');
 
    }else if(guessNumber === secrateNumber){
     // Show Secrate Number If The Guess Number Is Correct.
@@ -34,30 +36,16 @@ button.addEventListener('click', function (){
     // Anounce Winner In Heading.
     document.querySelector('h1').textContent = '🎉 Congratulations You Guess The Correct Number.';  
     // Winner Message.  
-    message.textContent = '✅ Correct Number.';
+    displayMessage('✅ Correct Number.');
     // High Score Function.
     if(score > highScore){
         highScore = score;
         document.querySelector('.high-score').textContent = highScore;
     }
-   }else if(guessNumber > secrateNumber){
-    if(score > 1){
-        message.textContent = '⏫ Too High.';
+   }else if(guessNumber !== secrateNumber){
+        guessNumber > secrateNumber ? displayMessage('⏫ Too High.') : displayMessage('⏬ Too Loo.');
         score--
         document.querySelector('.score').textContent = score;
-    }else{
-        message.textContent = '🚫 You Loss The Game.';
-        document.querySelector('.score').textContent = 0;
-    }
-   }else if(guessNumber < secrateNumber){
-    if(score > 1){
-        message.textContent = '⏬ Too Loo.';
-        score--
-        document.querySelector('.score').textContent = score;
-    }else{
-        message.textContent = '🚫 You Loss The Game.';
-        document.querySelector('.score').textContent = 0;
-    }
    }
 });
 
@@ -74,11 +62,6 @@ again.addEventListener('click', function(){
     document.querySelector('.score').textContent = score;
     // Reset High Score.
     secrateNumber = Math.trunc(Math.random() * 20 + 1);
-    message.textContent = 'Start guessing...';
+   displayMessage('Start guessing...');
     document.querySelector('.guess-number').value = '';
 });
-
-
-
-
-
